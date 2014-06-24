@@ -40,3 +40,5 @@ gem 'unicorn-rails'
 # gem 'debugger', group: [:development, :test]
 
 gem 'pry-rails'
+gem 'haml-rails'
+gem 'twitter-bootswatch-rails'
