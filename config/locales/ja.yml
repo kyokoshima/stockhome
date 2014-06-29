@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      stock:
+        name: "名前"
+        quantity: 残量
+        unit: 単位
