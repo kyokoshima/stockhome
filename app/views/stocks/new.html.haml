@@ -1,4 +1,10 @@
 - model_class = Stock
 .page-header
-  %h1=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human, :default => "New #{model_class.model_name.human}")
+	%h1 家の日用品を記録しましょう！
+.panel.panel-primary
+	.panel-heading
+		みんなはこんなものを記録しています
+	.panel-body
+		= @popular_stocks
+
 = render :partial => "form"

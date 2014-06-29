@@ -4,3 +4,7 @@
  *= require readable/loader
  *= require readable/bootswatch
 */
+
+body {
+	padding-top: 50px;
+}

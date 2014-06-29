@@ -1,7 +1,13 @@
 ja:
   activerecord:
+    model:
+      stock:
+        title: ストック
+        one: ストック
+        other: ストック
     attributes:
       stock:
         name: "名前"
         quantity: 残量
         unit: 単位
+        created_at: 登録日

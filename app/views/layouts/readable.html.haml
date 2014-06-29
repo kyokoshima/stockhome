@@ -32,17 +32,15 @@
                 %li
                   %a{href: '#'} default
                 %li.divider
-          %ul.nav.navbar-right
+          %ul.nav.navbar-nav.navbar-right
             %li
               %a aaaa
     .container
-      .page-header
-        .row
-          .col-md-12
-            .page-header
-              %h1
-                = yield :title
-            = yield
+      .row
+        .col-md-12
+          / %pre
+          /   = debug self.pretty_inspect
+          = yield
 
     /
       Javascripts
