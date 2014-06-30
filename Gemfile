@@ -48,4 +48,4 @@ end
 gem 'haml-rails'
 gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-helpers'
-gem 'simple_form'
+gem 'simple_form', '>=3.1.0.rc1'
