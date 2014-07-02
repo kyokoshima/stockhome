@@ -20,6 +20,8 @@ ja:
       destroy: "削除"
     new:
       cancel: "キャンセル"
+    _form:
+      cancel: "キャンセル"
   date:
     abbr_day_names:
     - 日
