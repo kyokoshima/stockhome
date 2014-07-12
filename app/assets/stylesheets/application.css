@@ -14,5 +14,9 @@
  *= require_self
  *= require readable/loader
  *= require readable/bootswatch
+ *= require bootstrap-slider
  */
+ body {
+	padding-top: 50px;
+}
 

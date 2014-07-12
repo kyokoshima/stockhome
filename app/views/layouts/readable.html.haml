@@ -9,7 +9,7 @@
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
-    = stylesheet_link_tag "readable", :media => "all"
+    = stylesheet_link_tag "application", :media => "all"
     = yield(:page_stylesheet) if content_for?(:page_stylesheet)
 
 
@@ -46,5 +46,5 @@
       Javascripts
       \==================================================
     / Placed at the end of the document so the pages load faster
-    = javascript_include_tag "readable"
+    = javascript_include_tag "application"
     = yield(:page_javascript) if content_for?(:page_javascript)
