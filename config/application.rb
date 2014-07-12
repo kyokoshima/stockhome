@@ -21,6 +21,6 @@ module Stockhome
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ja
 
-    config.assets.precompile += %w(readable.js readable.css)
+    config.assets.precompile += %w(*.js *.coffee readable.css)
   end
 end
