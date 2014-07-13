@@ -9,4 +9,7 @@
 			.panel-body
 				= @popular_stocks
 				= render :partial => "form"
-= javascript_include_tag "stocks"
+- content_for :page_javascript do
+	= javascript_include_tag "stocks"
+- content_for :page_stylesheet do
+	= stylesheet_link_tag "stocks"
