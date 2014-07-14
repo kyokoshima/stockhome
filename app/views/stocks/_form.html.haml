@@ -1,12 +1,8 @@
 = simple_form_for @stock, html: { class: 'form-horizontal' } do |f|
-  .form-group
-    = f.input :name
-  .form-group
-    = f.input :max_quantity, input_html: { autocomplete: 'off'}
-  .form-group
-    = f.input :quantity
-  .form-group
-    = f.input :unit
+  = f.input :name
+  = f.input :max_quantity, input_html: { autocomplete: 'off'}
+  = f.input :quantity
+  = f.input :unit, class: 'form-control'
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), stocks_path, :class => 'btn'
