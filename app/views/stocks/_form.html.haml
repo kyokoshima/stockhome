@@ -1,8 +1,20 @@
-= simple_form_for @stock, html: { class: 'form-horizontal' } do |f|
-  = f.input :name
-  = f.input :max_quantity, input_html: { autocomplete: 'off'}
-  = f.input :quantity
-  = f.input :unit, class: 'form-control'
+= form_for @stock, html: { class: 'form-horizontal' } do |f|
+  .form-group
+    %label.control-label.col-sm-2 名前
+    .col-sm-7
+      = f.text_field :name, {class: 'form-control'}
+  .form-group
+    %label.control-label.col-sm-2 最大量
+    .col-sm-7
+      = f.text_field :max_quantity, { autocomplete: 'off', class: 'form-control'}
+  .form-group
+    %label.control-label.col-sm-2 量
+    .col-sm-7
+      = f.text_field :quantity, {class: 'form-control'}
+  .form-group
+    %label.control-label.col-sm-2 単位
+    .col-sm-2
+      = f.text_field :unit, {class: 'form-control'}
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), stocks_path, :class => 'btn'
