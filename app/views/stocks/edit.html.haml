@@ -1,7 +1,11 @@
 - model_class = Stock
-.page-header
-	%h1　ストックを変更出来ます！
-= render :partial => "form"
+.row
+	.col-md-8.col-md-offset-2
+		.page-header
+			%h1　ストックを変更出来ます！
+		.panel.panel-primary
+			.panel-body
+				= render :partial => "form"
 - content_for :page_javascript do
 	= javascript_include_tag "stocks"
 - content_for :page_stylesheet do
