@@ -15,6 +15,7 @@
     %label.control-label.col-sm-2 単位
     .col-sm-2
       = f.text_field :unit, {class: 'form-control'}
-  .form-actions
-    = f.submit nil, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), stocks_path, :class => 'btn'
+  .form-group
+    .col-sm-offset-2
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), stocks_path, :class => 'btn'
