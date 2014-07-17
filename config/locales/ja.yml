@@ -159,6 +159,7 @@ ja:
       submit: 保存する
       update: 更新する
     links:
+      edit: 変更する
       cancel: キャンセル
   number:
     currency:
