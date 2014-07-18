@@ -11,12 +11,16 @@
 		- else
 			%table.table.table-striped
 				%tr
+					%th ID
+					%th 名前
 					%th
 					%th
 					%th
 
 				- @categories.each do |category|
 					%tr
+						%td= category.id
+						%td= category.name
 						%td= link_to 'Show', category
 						%td= link_to t('.edit', :default => t("helpers.links.edit")), edit_category_path(category), :class => 'btn btn-primary btn-xs'
 						%td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
