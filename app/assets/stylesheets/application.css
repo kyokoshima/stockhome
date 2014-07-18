@@ -12,6 +12,7 @@
  *
  *
  *= require_self
+ *= require bootstrap_and_overrides
  *= require readable/loader
  *= require readable/bootswatch
  *= require bootstrap-slider

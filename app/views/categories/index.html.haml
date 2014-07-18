@@ -1,23 +1,24 @@
 - model_class = Category
 .page-header
 	%h1 Listing categories
-- unless @categories.size > 0
 	.panel.panel-primary
-		.panel-heading
-			カテゴリーがありません！
 		.panel-body
-			= link_to "カテゴリを追加する！", new_category_path
-- else
-	%table.table.table-striped
-		%tr
-			%th
-			%th
-			%th
+			= link_to new_category_path, {class: 'btn btn-primary'} do
+				%span.glyphicon.glyphicon-plus カテゴリを追加する！
+		- unless @categories.size > 0
+			.panel-heading
+				カテゴリーがありません！
+		- else
+			%table.table.table-striped
+				%tr
+					%th
+					%th
+					%th
 
-		- @categories.each do |category|
-			%tr
-				%td= link_to 'Show', category
-				%td= link_to t('.edit', :default => t("helpers.links.edit")), edit_category_path(category), :class => 'btn btn-primary btn-xs'
-				%td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+				- @categories.each do |category|
+					%tr
+						%td= link_to 'Show', category
+						%td= link_to t('.edit', :default => t("helpers.links.edit")), edit_category_path(category), :class => 'btn btn-primary btn-xs'
+						%td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
 	%br
 	= link_to 'New Category', new_category_path
