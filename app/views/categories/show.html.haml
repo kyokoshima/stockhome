@@ -1,10 +1,21 @@
-%p#notice= notice
+- if notice
+	.alert.alert-success.alert-dismissable
+		%button.close(type='button' data-dismiss='alert')
+			%span(aria-hidden='true') &times;
+			%span.sr-only Close
+		%p#notice= notice
 
 .panel.panel-info
 	.panel-heading
 		%h3.panel-title
 	.panel-body
-		= @category
+		.row
+			.form-horizontal(role="form")
+				.form-group
+					.col-sm-2.control-label ID
+					.col-sm-4.form-control-static
+						= @category.id
+
 
 = link_to 'Edit', edit_category_path(@category)
 \|

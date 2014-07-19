@@ -9,7 +9,7 @@
 			.panel-heading
 				カテゴリーがありません！
 		- else
-			%table.table.table-striped
+			%table.table.table-striped.table-hover
 				%tr
 					%th ID
 					%th 名前
@@ -19,10 +19,12 @@
 
 				- @categories.each do |category|
 					%tr
-						%td= category.id
+						%td= link_to category.id, edit_category_path(category), {class: 'category-id'}
 						%td= category.name
-						%td= link_to 'Show', category
-						%td= link_to t('.edit', :default => t("helpers.links.edit")), edit_category_path(category), :class => 'btn btn-primary btn-xs'
-						%td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
-	%br
-	= link_to 'New Category', new_category_path
+						%td
+							= link_to category do
+								%span.glyphicon.glyphicon-eye-open
+						%td
+							= link_to category, :method => :delete, :data => { :confirm => 'Are you sure?' } do
+								%span.glyphicon.glyphicon-remove
+

@@ -42,6 +42,8 @@ gem 'unicorn-rails'
 group :development  do
 	gem 'capistrano-rails'
 	gem 'pry-rails'
+	gem 'better_errors'
+	gem "binding_of_caller"
 end
 
 
