@@ -1,38 +1,41 @@
-.panel.panel-default
-  .panel-heading
-    .panel-title
-      = heading
-  = form_for @category, html: { class: 'form-horizontal' } do |f|
-    - if @category.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
-        %ul
-          - @category.errors.full_messages.each do |msg|
-            %li= msg
-        = @category.errors.pretty_inspect
-    .panel-body
-      - has_name_error = @category.errors[:name].any?
-      .form-group{class: ('has-error has-feedback' if has_name_error)}
-        %label.control-label.col-sm-2 名前
-        .col-sm-4
-          = f.text_field :name, {class: 'form-control'}
-          - if has_name_error
-            %span.glyphicon.glyphicon-remove.form-control-feedback
-        .col-sm-6
-          .help-block
-            = @category.errors[:name] if has_name_error
-      - has_unit_name_error = @category.errors["unit.name"].any?
-      .form-group{class: ('has-error has-feedback' if has_unit_name_error)}
-        %label.control-label.col-sm-2 デフォルト単位
-        .col-sm-4
-          = f.fields_for :unit do |u|
-            = u.text_field :name, {class: 'form-control'}
-          - if has_unit_name_error
-            %span.glyphicon.glyphicon-remove.form-control-feedback
-        .col-sm-6
-          .help-block
-            = @category.errors["unit.name"] if has_unit_name_error
-    .panel-footer
-      .actions
-        = f.submit '保存', class: 'btn btn-primary'
-        = link_to 'キャンセル', categories_path, class: 'btn btn-default'
+.row
+  .col-sm-9.col-sm-offset-1
+    .panel.panel-default
+      .panel-heading
+        .panel-title
+          = heading
+      = form_for @category, html: { class: 'form-horizontal' } do |f|
+        - if @category.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+            %ul
+              - @category.errors.full_messages.each do |msg|
+                %li= msg
+            = @category.errors.pretty_inspect
+        .panel-body
+          - has_name_error = @category.errors[:name].any?
+          .form-group{class: ('has-error has-feedback' if has_name_error)}
+            %label.control-label.col-sm-4 名前
+            .col-sm-4
+              = f.text_field :name, {class: 'form-control'}
+              - if has_name_error
+                %span.glyphicon.glyphicon-remove.form-control-feedback
+            .col-sm-4
+              .help-block
+                = @category.errors[:name] if has_name_error
+          - has_unit_name_error = @category.errors["unit.name"].any?
+          .form-group{class: ('has-error has-feedback' if has_unit_name_error)}
+            %label.control-label.col-sm-4 デフォルト単位
+            .col-sm-4
+              = f.fields_for :unit do |u|
+                = u.text_field :name, {class: 'form-control'}
+              - if has_unit_name_error
+                %span.glyphicon.glyphicon-remove.form-control-feedback
+            .col-sm-4
+              .help-block
+                = @category.errors["unit.name"] if has_unit_name_error
+        .panel-footer
+          .row
+            .col-sm-8.col-sm-offset-4
+              = f.submit '保存', class: 'btn btn-primary'
+              = link_to 'キャンセル', categories_path, class: 'btn btn-default'
