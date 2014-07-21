@@ -1,21 +1,22 @@
+= pp @stock.errors
 = form_for @stock, html: { class: 'form-horizontal' } do |f|
   .form-group
-    %label.control-label.col-sm-2 名前
+    %label.control-label.col-sm-3 名前
     .col-sm-7
       = f.text_field :name, {class: 'form-control'}
   .form-group
-    %label.control-label.col-sm-2 最大量
+    %label.control-label.col-sm-3 最大量
     .col-sm-7
       = f.text_field :max_quantity, { autocomplete: 'off', class: 'form-control'}
   .form-group
-    %label.control-label.col-sm-2 量
+    %label.control-label.col-sm-3 量
     .col-sm-7
       = f.text_field :quantity, {class: 'form-control'}
   .form-group
-    %label.control-label.col-sm-2 単位
+    %label.control-label.col-sm-3 単位
     .col-sm-2
       = f.text_field :unit, {class: 'form-control'}
   .form-group
-    .col-sm-offset-2
+    .col-sm-offset-3
       = f.submit nil, :class => 'btn btn-primary'
       = link_to t('.cancel', :default => t("helpers.links.cancel")), stocks_path, :class => 'btn'
