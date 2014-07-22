@@ -1,13 +1,9 @@
-= pp @stock.errors
+= debug @stock.errors
 = form_for @stock, html: { class: 'form-horizontal' } do |f|
   .form-group
     %label.control-label.col-sm-3 名前
     .col-sm-7
       = f.text_field :name, {class: 'form-control'}
-  .form-group
-    %label.control-label.col-sm-3 最大量
-    .col-sm-7
-      = f.text_field :max_quantity, { autocomplete: 'off', class: 'form-control'}
   .form-group
     %label.control-label.col-sm-3 量
     .col-sm-7
@@ -16,6 +12,13 @@
     %label.control-label.col-sm-3 単位
     .col-sm-2
       = f.text_field :unit, {class: 'form-control'}
+  .form-group
+    .row
+      %label.control-label.col-sm-3 消費量
+      .col-sm-2
+        = f.text_field :consumption_per, {class: 'form-control'}
+      .col-sm-2
+        = f.text_field :consumption_count, {class: 'form-control'}
   .form-group
     .col-sm-offset-3
       = f.submit nil, :class => 'btn btn-primary'

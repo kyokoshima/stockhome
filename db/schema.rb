@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719062722) do
+ActiveRecord::Schema.define(version: 20140722122004) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20140719062722) do
     t.string   "unit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "consumption_per",   default: "D", null: false
+    t.integer  "consumption_count", default: 0,   null: false
   end
 
   create_table "units", force: true do |t|
