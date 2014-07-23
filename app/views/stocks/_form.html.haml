@@ -16,9 +16,11 @@
     .row
       %label.control-label.col-sm-3 消費量
       .col-sm-2
-        = f.select :consumption_per, {"一日に" => 'D',"一週間に" => 'W',"ひと月に" => 'M'}, {class: 'form-control'}
+        = f.select :consumption_per, {"一日に" => 'D',"一週間に" => 'W',"ひと月に" => 'M'}, {}, {class: 'form-control'}
       .col-sm-2
         = f.text_field :consumption_count, {class: 'form-control'}
+      .col-sm-4
+        %label.control-label#choiced_unit
   .form-group
     .col-sm-offset-3
       = f.submit nil, :class => 'btn btn-primary'

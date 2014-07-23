@@ -15,6 +15,8 @@ $('#stock_max_quantity').on 'change', () ->
 		.slider('setAttribute', 'max', val)
 		.slider('setValue', parseInt(val))
 
+$('#stock_unit').on 'keyup', ->
+	$('#choiced_unit').text $(this).val()
 
 # if $('#stock_max_quantity').val()
 # 	$('#stock_quantity').slider('setAttribute', 'max', $('#stock_max_quantity').val())
