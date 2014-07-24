@@ -1,4 +1,8 @@
-= debug @stock.errors
+- if @stock.errors.any?
+  .alert.alert-danger
+    %ul
+    - @stock.errors.full_messages.each do |msg|
+      %li= msg
 = form_for @stock, html: { class: 'form-horizontal' } do |f|
   .form-group
     %label.control-label.col-sm-3 名前
@@ -10,7 +14,7 @@
       = f.text_field :quantity, {class: 'form-control'}
   .form-group
     %label.control-label.col-sm-3 単位
-    .col-sm-2
+    .col-sm-7
       = f.text_field :unit, {class: 'form-control'}
   .form-group
     .row
