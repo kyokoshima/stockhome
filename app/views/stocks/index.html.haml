@@ -1,4 +1,7 @@
 - model_class = Stock
+- unless notice.blank?
+  .alert.alert-success
+    = notice
 .page-header
   %h1 あなたのストック一覧
 - unless @stocks.size > 0
