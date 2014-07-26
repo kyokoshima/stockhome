@@ -1,25 +1,24 @@
-= @stock.pretty_inspect
-- if @stock.errors.any?
-  .alert.alert-danger
-    %ul
-    - @stock.errors.full_messages.each do |msg|
-      %li= msg
-= form_for @stock, html: { class: 'form-horizontal' } do |f|
-  .form-group
-    %label.control-label.col-sm-3 名前
-    .col-sm-7
-      = f.text_field :name, {class: 'form-control', autocomplete: 'off'}
-  .form-group
-    %label.control-label.col-sm-3 量
-    .col-sm-2
-      = f.text_field :quantity, {class: 'form-control', autocomplete: 'off'}
-    %label.control-label.choiced_unit
-  .form-group
-    %label.control-label.col-sm-3 単位
-    .col-sm-3
-      = f.text_field :unit, {class: 'form-control', autocomplete: 'off'}
-  .form-group
-    .row
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title title
+  .panel-body
+  - if @stock.errors.any?
+    .alert.alert-danger
+      %ul
+      - @stock.errors.full_messages.each do |msg|
+        %li= msg
+  = form_for @stock, html: { class: 'form-horizontal' } do |f|
+    .form-group
+      %label.control-label.col-sm-3 名前
+      .col-sm-7
+        = f.text_field :name, {class: 'form-control', autocomplete: 'off'}
+    .form-group
+      %label.control-label.col-sm-3 量
+      .col-sm-2
+        = f.text_field :quantity, {class: 'form-control', autocomplete: 'off'}
+      .col-sm-3
+        = f.text_field :unit, {class: 'form-control', autocomplete: 'off', placeholder: '単位'}
+    .form-group
       %label.control-label.col-sm-3 消費量
       .col-sm-3
         = f.select :consumption_per, {"一日に" => 'D',"一週間に" => 'W',"ひと月に" => 'M', "一年に" => 'Y'}, {}, {class: 'form-control'}
@@ -27,7 +26,7 @@
         = f.text_field :consumption_count, {class: 'form-control'}
       .col-sm-2
         %label.control-label.choiced_unit
-  .form-group
-    .col-sm-offset-3
-      = f.submit nil, :class => 'btn btn-primary'
-      = link_to t('.cancel', :default => t("helpers.links.cancel")), stocks_path, :class => 'btn'
+    .form-group
+      .col-sm-offset-3
+        = f.submit nil, :class => 'btn btn-primary'
+        = link_to t('.cancel', :default => t("helpers.links.cancel")), stocks_path, :class => 'btn'

@@ -17,6 +17,5 @@
 //= require readable/loader
 //= require readable/bootswatch
 //= require bootstrap-slider
-//= require_tree .
 
 
