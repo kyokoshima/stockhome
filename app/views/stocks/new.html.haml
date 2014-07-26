@@ -2,11 +2,12 @@
 .row
 	.col-md-8.col-md-offset-2
 		= render "form", title: "家の日用品を記録しましょう！"
-		.panel.panel-primary
-			.panel-heading
-				みんなはこんなものを記録しています
-			.panel-body
-				= @popular_stocks
+		- if @popular_stocks.any?
+			.panel.panel-primary
+				.panel-heading
+					みんなはこんなものを記録しています
+				.panel-body
+					= @popular_stocks
 - content_for :page_javascript do
 	= javascript_include_tag "stocks"
 - content_for :page_stylesheet do
