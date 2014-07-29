@@ -4,4 +4,8 @@ class Stock < ActiveRecord::Base
 	validates :quantity,  numericality: {greater_than: 0}
 	validates :unit, 			presence: true
 	has_many :categories
+
+	def popular
+		self.find.all
+	end
 end

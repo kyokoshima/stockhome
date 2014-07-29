@@ -15,8 +15,7 @@ class StocksController < ApplicationController
   # GET /stocks/new
   def new
     @stock = Stock.new
-    @popular_stocks = []
-    # aaaa
+    @popular_stocks = Stock.popular
   end
 
   # GET /stocks/1/edit
