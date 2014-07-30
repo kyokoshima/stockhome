@@ -15,7 +15,7 @@ class StocksController < ApplicationController
   # GET /stocks/new
   def new
     @stock = Stock.new
-    @popular_stocks = Stock.popular
+    @popular_stocks = @stock.popular
   end
 
   # GET /stocks/1/edit

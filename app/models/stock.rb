@@ -6,6 +6,6 @@ class Stock < ActiveRecord::Base
 	has_many :categories
 
 	def popular
-		self.find.all
+		self.class.all
 	end
 end
