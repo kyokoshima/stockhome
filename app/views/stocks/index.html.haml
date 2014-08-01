@@ -15,9 +15,9 @@
   %table.table.table-striped
     %thead
       %tr
-        %th= model_class.human_attribute_name(:id)
-        %th= model_class.human_attribute_name(:name)
-        %th= model_class.human_attribute_name(:quantity)
+        %th(style="width: 5%")= model_class.human_attribute_name(:id)
+        %th(style="width: 20%")= model_class.human_attribute_name(:name)
+        %th(style="width: 20%")= model_class.human_attribute_name(:quantity)
         %th= model_class.human_attribute_name(:unit)
         %th= model_class.human_attribute_name(:created_at)
         %th=t '.actions', :default => t("helpers.actions")
@@ -26,8 +26,11 @@
         %tr
           %td= link_to stock.id, stock_path(stock)
           %td= stock.name
-          %td= stock.quantity
-          %td= stock.unit
+          %td
+            - width = stock.consumption_of / stock.quantity
+            .progress
+              .progress-bar.progress-bar-success(style="width: #{width}%")
+          %td
           %td=l stock.created_at
           %td
             = link_to t('.edit', :default => t("helpers.links.edit")), edit_stock_path(stock), :class => 'btn btn-primary btn-xs'

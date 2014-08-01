@@ -8,4 +8,18 @@ class Stock < ActiveRecord::Base
 	def popular
 		self.class.all
 	end
+
+	def consumption_of
+		case consumption_per
+			when 'D'
+				value = consumption_count * 30
+			when 'W'
+				value = consumption_count * 4
+			when 'M'
+				value = consumption_count
+			when 'Y'
+				value = consumption_count / 12
+		end
+		value
+	end
 end
