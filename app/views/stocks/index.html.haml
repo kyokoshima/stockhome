@@ -18,7 +18,6 @@
         %th(style="width: 5%")= model_class.human_attribute_name(:id)
         %th(style="width: 20%")= model_class.human_attribute_name(:name)
         %th(style="width: 20%")= model_class.human_attribute_name(:quantity)
-        %th= model_class.human_attribute_name(:unit)
         %th= model_class.human_attribute_name(:created_at)
         %th=t '.actions', :default => t("helpers.actions")
     %tbody
@@ -27,10 +26,10 @@
           %td= link_to stock.id, stock_path(stock)
           %td= stock.name
           %td
-            - width = stock.consumption_of / stock.quantity
+            - width = [stock.quantity / stock.consumption_of * 100, 100].min
             .progress
-              .progress-bar.progress-bar-success(style="width: #{width}%")
-          %td
+              .progress-bar.progress-bar-striped.active(style="width: #{width}%")
+                = "#{stock.residual_quantity} #{stock.unit}"
           %td=l stock.created_at
           %td
             = link_to t('.edit', :default => t("helpers.links.edit")), edit_stock_path(stock), :class => 'btn btn-primary btn-xs'

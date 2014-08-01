@@ -22,4 +22,20 @@ class Stock < ActiveRecord::Base
 		end
 		value
 	end
+	def residual_quantity
+		# 更新日と現在日の差日数
+		diff = Date.today - updated_at.to_date
+		# 一日辺りの減少量
+		case consumption_per
+			when 'D'
+				dec_value = consumption_count
+			when 'W'
+				dec_value = consumption_count / 7
+			when 'M'
+				dec_value = consumption_count / 30
+			when 'Y'
+				dec_value = consumption_count / 365
+		end
+		value = quantity - (dec_value * diff)
+	end
 end
