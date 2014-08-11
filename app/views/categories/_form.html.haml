@@ -13,6 +13,7 @@
                 %li= msg
             = @category.errors.pretty_inspect
         .panel-body
+          %img(src="icon")
           - has_name_error = @category.errors[:name].any?
           .form-group{class: ('has-error has-feedback' if has_name_error)}
             %label.control-label.col-sm-4 名前
