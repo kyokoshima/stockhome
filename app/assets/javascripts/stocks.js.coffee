@@ -12,3 +12,5 @@ $('#stock_unit').on 'keyup', ->
 # else
 # 	$('#stock_quantity').slider('setAttribute', 'max', 100)
 
+$('#browse').on 'change', ->
+ 	$('#cover').html($(this).val())

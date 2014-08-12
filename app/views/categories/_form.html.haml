@@ -18,7 +18,13 @@
             .col-sm-4
               .thumbnail
                 %img(src="icon")
-              = f.file_field :icon
+              = f.file_field :icon, style: 'display: none'
+              .input-group
+                .input-group-addon(style="padding: 0; margin: 0")
+                  %a#browse.btn
+                    %i.glyphicon.glyphicon-folder-open
+                %span#cover.form-control select file
+
           - has_name_error = @category.errors[:name].any?
           .form-group{class: ('has-error has-feedback' if has_name_error)}
             %label.control-label.col-sm-4 名前
