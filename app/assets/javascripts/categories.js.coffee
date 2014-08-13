@@ -7,3 +7,9 @@ $ ->
 		location.href = $(this).attr('href')
 	$('td').on 'click', ->
 		$(this).siblings('td').first().children('.category-id').triggger('click')
+
+	$('#browse').on 'click', ->
+		$('#category_icon').trigger('click')
+	$('#category_icon').on 'change', ->
+		fileName = $(this).val().replace('C:\\fakepath\\', '')
+		$('#cover').html(fileName)
