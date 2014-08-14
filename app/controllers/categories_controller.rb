@@ -40,8 +40,15 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   # PATCH/PUT /categories/1.json
   def update
+    # category = {}
+    # pp category_params[:icon].read
+    # category_params[:icon] = category_params[:icon].read
+    upload_file = category_params[:icon]
+
+    @category.attributes = category_params
+    @category.icon = upload_file.read
     respond_to do |format|
-      if @category.update(category_params)
+      if @category.save
         format.html { redirect_to @category, notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @category }
       else
@@ -75,6 +82,6 @@ class CategoriesController < ApplicationController
     def category_params
       params
         .require(:category)
-        .permit(:name, unit_attributes: [:name])
+        .permit(:id, :name, :icon, unit_attributes: [:id, :name])
     end
 end
