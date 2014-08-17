@@ -15,6 +15,7 @@ class StocksController < ApplicationController
   # GET /stocks/new
   def new
     @stock = Stock.new
+    @stock.build_category
     @popular_stocks = @stock.popular
   end
 

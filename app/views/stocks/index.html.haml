@@ -23,7 +23,7 @@
     %tbody
       - @stocks.each do |stock|
         %tr
-          %td= link_to stock.id, stock_path(stock)
+          %td= link_to stock.id, edit_stock_path(stock)
           %td= stock.name
           %td
             - width = [stock.quantity / stock.consumption_of * 100, 100].min

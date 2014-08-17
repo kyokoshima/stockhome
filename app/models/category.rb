@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-	belongs_to :stock
+	has_many :stocks
 	belongs_to :unit
 	acts_as_nested_set
 	accepts_nested_attributes_for :unit
