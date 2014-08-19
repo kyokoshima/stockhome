@@ -17,6 +17,7 @@ class StocksController < ApplicationController
     @stock = Stock.new
     @stock.build_category
     @popular_stocks = @stock.popular
+    @categories = Category.all
   end
 
   # GET /stocks/1/edit
