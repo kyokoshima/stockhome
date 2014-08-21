@@ -17,8 +17,11 @@
                 Collapse
         #collapseBody.panel-collapse.collapse
           .panel-body
-            = @categories.each do |cat|
-              = image_tag icon_category_path cat
+            .row
+              - @categories.each do |cat|
+                .col-xs-3
+                  %span.thumbnail
+                    = image_tag icon_category_path cat
     .form-group
       %label.control-label.col-sm-3 名前
       .col-sm-7
