@@ -13,13 +13,13 @@
       .col-sm-7
         = f.fields_for :category do |cat|
           - @categories.each_with_index do |cat, i|
-            - if i % 3 == 0
-              .row
-            .col-xs-2
-              %span.thumbnail
-                = image_tag icon_category_path cat
-            .col-xs-2
-              %p.category-name= cat.name
+            - if i < 4
+              .col-xs-3
+                %a.thumbnail(data-category-id="#{cat.id}")
+                  = image_tag(icon_category_path(cat), class: 'img-thumbnail')
+                  %p.category-name= cat.name
+            - else
+              %a(href="#") その他・・・
     .form-group
       %label.control-label.col-sm-3 名前
       .col-sm-7
