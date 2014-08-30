@@ -56,3 +56,6 @@ gem 'twitter-bootswatch-rails-helpers'
 gem 'awesome_nested_set', '~>3.0.0.rc5'
 
 gem 'devise'
+gem 'html2haml'
+
+gem 'omniauth-twitter'

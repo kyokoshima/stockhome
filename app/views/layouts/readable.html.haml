@@ -34,7 +34,10 @@
                 %li.divider
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a aaaa
+              - if user_signed_in?
+                = current_user
+              - else
+                = link_to 'ログイン', new_user_session_path
     .container
       .row
         .col-md-12
