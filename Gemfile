@@ -59,3 +59,5 @@ gem 'devise'
 gem 'html2haml'
 
 gem 'omniauth-twitter'
+
+gem 'settingslogic'
