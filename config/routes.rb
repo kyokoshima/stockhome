@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   get 'home/index'
 
   root 'home#index'
-  devise_for :users
+  # devise_for :users, controllers: {
+  #   omniauth_callbacks: "users/omniauth_callbacks"
+  # }
+  get '/auth/:provider/callback', :to => 'sessions#callback'
+  post '/auth/:provider/callback', :to => 'sessions#callback'
   resources :categories do
     member do
       get :icon

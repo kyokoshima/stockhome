@@ -34,10 +34,11 @@
                 %li.divider
           %ul.nav.navbar-nav.navbar-right
             %li
-              - if user_signed_in?
-                = current_user
-              - else
-                = link_to 'ログイン', new_user_session_path
+              / - if user_signed_in?
+              /   = current_user
+              / - else
+              / = link_to 'ログイン', new_user_session_path
+              = link_to 'twitterでログイン', "/auth/twitter"
     .container
       .row
         .col-md-12
